@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Watchirr — streaming-aware watchlist for Jellyfin</title>
+    <meta
+      name="description"
+      content="One watchlist for your Jellyfin household — search, coverage check, acquire, and watched in a single app."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="mesh" aria-hidden="true"></div>
+
+    <header class="top">
+      <a class="brand" href="/">Watch<span>irr</span></a>
+      <nav>
+        <a href="https://github.com/watchirr/watchirr">GitHub</a>
+        <a class="btn" href="#start">Get started</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">Self-hosted · Jellyfin households</p>
+        <h1>One watchlist. Coverage before acquire.</h1>
+        <p class="lede">
+          Search, check streaming coverage, acquire into Radarr/Sonarr only when
+          needed, and track watched — in a single app.
+        </p>
+        <div class="ctas">
+          <a class="btn primary" href="#start">Run with Docker</a>
+          <a class="btn ghost" href="https://github.com/watchirr/watchirr"
+            >View on GitHub</a
+          >
+        </div>
+        <figure class="shot">
+          <img
+            src="search.png"
+            width="1280"
+            height="800"
+            alt="Watchirr Search with Discover rails for trending and popular titles"
+          />
+        </figure>
+      </section>
+
+      <section class="start" id="start">
+        <h2>Quick start</h2>
+        <ol class="steps">
+          <li>
+            <span class="n">1</span>
+            <div>
+              <h3>Pull the image</h3>
+              <pre><code>docker pull ghcr.io/watchirr/watchirr:latest</code></pre>
+              <p class="pin">
+                Prefer a pin for production:
+                <code>ghcr.io/watchirr/watchirr:v1.0.1</code> or
+                <code>:v1</code>.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="n">2</span>
+            <div>
+              <h3>Deploy the stack</h3>
+              <p>
+                Compose example or Portainer stack from the
+                <a href="https://github.com/watchirr/watchirr">repo</a> — image
+                on port <code>3001</code>, SQLite under <code>./data</code>.
+              </p>
+              <pre><code>docker compose -f docker-compose.example.yml up -d</code></pre>
+            </div>
+          </li>
+          <li>
+            <span class="n">3</span>
+            <div>
+              <h3>Open the app</h3>
+              <p>
+                Visit <a href="http://localhost:3001">http://localhost:3001</a>,
+                create the Admin on first run, then configure TMDB / *arr /
+                Jellyfin in Settings.
+              </p>
+            </div>
+          </li>
+        </ol>
+        <p class="more">
+          Full durability, Postgres, and reverse-proxy notes:
+          <a
+            href="https://github.com/watchirr/watchirr/blob/main/docs/self-host.md"
+            >docs/self-host.md</a
+          >.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        <a class="brand" href="/">Watch<span>irr</span></a>
+        · MIT ·
+        <a href="https://github.com/watchirr/watchirr">github.com/watchirr/watchirr</a>
+      </p>
+    </footer>
+  </body>
+</html>
