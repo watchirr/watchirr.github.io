@@ -33,7 +33,8 @@
         <h1>One watchlist. Coverage before acquire.</h1>
         <p class="lede">
           Search, check streaming coverage, acquire into Radarr/Sonarr only when
-          needed, and track watched — in a single app.
+          needed, and track watched — in a single app. Finite disk is not wasted
+          on what you can already stream.
         </p>
         <div class="ctas">
           <a class="btn primary" href="#start">Run with Docker</a>
@@ -51,6 +52,40 @@
         </figure>
       </section>
 
+      <section class="does" aria-labelledby="does-heading">
+        <h2 id="does-heading">What it does</h2>
+        <ul>
+          <li>
+            <strong>Search</strong> movies and TV (TMDB), with Discover rails when
+            the query is empty
+          </li>
+          <li>
+            <strong>Watchlist</strong> shared by the household — still to watch,
+            coming in, watched
+          </li>
+          <li>
+            <strong>Streaming coverage</strong> — checks your paid subscription
+            services before acquiring
+          </li>
+          <li>
+            <strong>Acquire</strong> into Radarr or Sonarr only when coverage is
+            missing
+          </li>
+          <li>
+            <strong>Watched</strong> from Jellyfin playback progress, or mark by
+            hand
+          </li>
+          <li>
+            <strong>Library Import</strong> — one-shot Import to Watchlist from
+            Radarr / Sonarr (Settings)
+          </li>
+          <li>
+            <strong>Watched Import</strong> — one-shot Import Watched from
+            Jellyfin progress (Settings)
+          </li>
+        </ul>
+      </section>
+
       <section class="start" id="start">
         <h2>Quick start</h2>
         <ol class="steps">
@@ -61,7 +96,7 @@
               <pre><code>docker pull ghcr.io/watchirr/watchirr:latest</code></pre>
               <p class="pin">
                 Prefer a pin for production:
-                <code>ghcr.io/watchirr/watchirr:v1.0.1</code> or
+                <code>ghcr.io/watchirr/watchirr:v1.0.3</code> or
                 <code>:v1</code>.
               </p>
             </div>
@@ -71,9 +106,10 @@
             <div>
               <h3>Deploy the stack</h3>
               <p>
-                Compose example or Portainer stack from the
-                <a href="https://github.com/watchirr/watchirr">repo</a> — image
-                on port <code>3001</code>, SQLite under <code>./data</code>.
+                Docker Compose or Portainer Stacks — same image on port
+                <code>3001</code>, SQLite at <code>./data/watchirr.db</code>.
+                Compose example and <code>portainer-stack.yml</code> live in the
+                <a href="https://github.com/watchirr/watchirr">repo</a>.
               </p>
               <pre><code>docker compose -f docker-compose.example.yml up -d</code></pre>
             </div>
@@ -84,8 +120,8 @@
               <h3>Open the app</h3>
               <p>
                 Visit <a href="http://localhost:3001">http://localhost:3001</a>,
-                create the Admin on first run, then configure TMDB / *arr /
-                Jellyfin in Settings.
+                create the Admin on first run (<code>/setup</code>), then
+                configure TMDB / *arr / Jellyfin in Settings.
               </p>
             </div>
           </li>
